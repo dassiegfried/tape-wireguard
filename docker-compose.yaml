@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  tape-wireguard:
+    build:
+        context: .
+    container_name: tape-wireguard
+    user: 0:0
+    privileged: true
+    volumes:
+      - "/mnt/nvme/tns-docker-apps/tape-wg:/etc/wireguard:rw"
+      - "/mnt/nvme:/mnt/nvme:rw"
+      - "/mnt/hdds:/mnt/hdds:rw"
